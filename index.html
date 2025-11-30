@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Футбольне Таро</title>
+<link rel="icon" type="image/png" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top-bar">
+      <div class="brand">
+        <h1>Футбольне Таро</h1>
+        <p class="tagline">
+          Три карти — як три моменти в матчі. Подивимось, що покаже твій футбол життя.
+        </p>
+      </div>
+      <div class="controls">
+        <label class="style-label">
+          Стиль трактування
+          <select id="styleSelect">
+            <option value="balanced" selected>Баланс: футбол + життя</option>
+            <option value="football" disabled>Більше про футбол (soon)</option>
+            <option value="life" disabled>Більше про життя (soon)</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <main>
+     <section class="actions-section">
+  <h2>Обери розклад</h2>
+  <div class="buttons-row">
+    <button id="btn3" class="mode-btn">Зробити розклад на 3 карти</button>
+    <button id="btn5" class="mode-btn">Зробити розклад на 5 карт</button>
+  </div>
+  <p class="hint">
+    У колоді 78 карт: старші аркани як ключові ролі, м’ячі — атаки, бутси — ресурси,
+    голи — реалізація, атмосфера — енергія трибун.
+  </p>
+</section>
+
+
+      <section class="spread-section">
+        <div class="spread-header">
+          <h2 id="spreadTitle">Твій розклад з’явиться тут</h2>
+        </div>
+        <div id="spreadContainer" class="cards-grid">
+          <!-- Карти розкладу рендеряться тут JS-ом -->
+        </div>
+      </section>
+
+      <section class="summary-section">
+        <h3>Загальний висновок</h3>
+        <p id="summaryText" class="summary-text">
+          Натисни кнопку розкладу, і ми подивимось, що зараз за матч — де ситуація, де виклик, а де гол у ворота майбутнього.
+        </p>
+      </section>
+
+      <section class="deck-info">
+        <h3>Про цю колоду</h3>
+        <p>
+          «Футбольне Таро» поєднує класичні аркани з футбольними архетипами: від дебютанта й легендарного тренера
+          до фанатського замісу й Златан-ефекту. Кожна карта має подвійне читання — про гру на полі та про гру в житті.
+        </p>
+        <p>
+          Старші аркани відповідають великим сюжетам та переломним моментам. Малі аркани працюють із чотирма вимірами:
+          атаки (<strong>М’ячі</strong>), ресурси й робота (<strong>Бутси</strong>), реалізація й рішення
+          (<strong>Голи</strong>), енергія та настрій (<strong>Атмосфера</strong>).
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="cards-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
