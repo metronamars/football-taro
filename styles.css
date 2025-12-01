@@ -646,5 +646,130 @@ body {
 
   background-color: gold; /* або gold, або будь-який */
 }
+/* ===== Мобільна адаптація ===== */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .app {
+    max-width: 100%;
+    padding: 12px 12px 24px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .top-bar h1,
+  .top-bar h2,
+  .top-bar h3 {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  /* Кнопки режимів — на всю ширину */
+  .mode-switch {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .mode-switch button {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  /* Сітка карт — одна колонка */
+  #spreadContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  /* Картинка зверху, текст під нею */
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card-image-wrapper {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .card-image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .card-text-block {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .card-name {
+    font-size: 16px;
+  }
+
+  .card-meta {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .meta-pill {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  /* Підказка-іконка фліпу (щоб не з’їдала місце) */
+  .card-flip-hint {
+    width: 18px;
+    height: 18px;
+    right: 12px;
+    top: 12px;
+  }
+
+  /* Менше 3D-стресу на мобілці */
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* Дуже маленькі екрани */
+@media (max-width: 480px) {
+  .app {
+    padding: 8px 8px 20px;
+  }
+
+  .card {
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  .card-name {
+    font-size: 15px;
+  }
+
+  .card-position-text {
+    font-size: 13px;
+  }
+
+  #summaryText {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
 
 
