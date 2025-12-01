@@ -832,3 +832,58 @@ body {
     overflow-y: visible;
   }
 }
+/* ===== КОМПАКТНА ЗАДНЯ ЧАСТИНА КАРТКИ ДЛЯ ДЕСКТОПУ ===== */
+@media (min-width: 769px) {
+
+  /* Задня сторона */
+  .card-face.back {
+    padding: 24px 28px;
+    overflow-y: visible !important; /* щоб не було скролу */
+  }
+
+  /* Назва карти */
+  .card-back-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  /* Архетип + слоган */
+  .card-back-archetype {
+    font-size: 15px;
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+
+  .card-back-slogan {
+    font-size: 15px;
+    line-height: 1.35;
+    opacity: 0.85;
+    margin-bottom: 16px;
+  }
+
+  /* Основний текст */
+  .card-back-meaning {
+    font-size: 15px;
+    line-height: 1.45;
+    margin-bottom: 16px;
+  }
+
+  /* Блоки “Коли випадає / Запитай себе” */
+  .card-back-section-title {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+  }
+
+  .card-back-list {
+    font-size: 15px;
+    line-height: 1.45;
+    gap: 6px;
+  }
+
+  .card-back-list li {
+    margin-bottom: 6px;
+  }
+}
+
