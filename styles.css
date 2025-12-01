@@ -746,52 +746,19 @@ body {
   }
 }
 
-/* Дуже маленькі екрани */
-@media (max-width: 480px) {
+/* ===== УНІФІКОВАНА МОБІЛЬНА ВЕРСІЯ (max-width: 768px) ===== */
+@media (max-width: 768px) {
+
+  /* Layout */
   .app {
-    padding: 8px 8px 20px;
+    padding: 10px 12px 24px;
   }
 
-  .card {
-    padding: 10px;
-    border-radius: 16px;
-  }
-
-  .card-name {
-    font-size: 15px;
-  }
-
-  .card-position-text {
-    font-size: 13px;
-  }
-
-  #summaryText {
-    font-size: 13px;
-    line-height: 1.4;
-  }
-}
-@media (max-width: 768px) {
-  .card {
-    height: auto;
-    max-height: none;
-  }
-
-  .card-image-wrapper {
-    max-height: 60vh;      /* щоб картинка не була вища за 60% екрану */
-  }
-
-  .card-image-wrapper img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;   /* картинка вміщується цілком, без обрізання */
-    display: block;
-  }
-}
-/* ==== Фікс, щоб карту не різало на мобільному ==== */
-@media (max-width: 768px) {
-  /* Шапка не заліпає зверху на мобілці */
   .top-bar {
+    flex-direction: column;
+    align-items: stretch;
     position: static;
+    gap: 6px;
   }
 
   /* Одна карта в рядок */
@@ -800,90 +767,47 @@ body {
     gap: 16px;
   }
 
-  /* Нехай висота картки підлаштовується під контент */
-  .card-inner {
-    min-height: auto; /* було 520px */
+  /* Картка автоматично росте по контенту */
+  .card {
+    max-width: 100%;
   }
 
-  /* Картинка зверху, текст під нею */
+  .card-inner {
+    min-height: auto;
+  }
+
+  /* Картинка зверху */
   .card-body {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
-  /* Картинка більша, але без обрізання */
+  /* ГОЛОВНЕ: не обрізаємо і не стискаємо */
   .card-image-wrapper {
     width: 100%;
-    max-width: 360px;   /* було 260px — зробили трохи більшу */
-    height: auto;       /* було 260px — через це воно обрізало/стискало */
-    margin: 0 auto 8px;
+    max-width: 340px;
+    height: auto !important;
+    margin: 0 auto 10px;
   }
 
   .card-image-wrapper img {
     width: 100%;
-    height: auto;
+    height: auto !important;
     object-fit: contain;
     display: block;
   }
 
-  /* Щоб текст не засовувався в окремий скрол всередині картки */
+  /* Текст не засовується у свій маленький скрол */
   .card-face {
-    overflow-y: visible;
+    overflow-y: visible !important;
+  }
+
+  /* Підказка фліпу */
+  .card-flip-hint {
+    width: 18px;
+    height: 18px;
+    right: 12px;
+    top: 12px;
   }
 }
-/* ===== КОМПАКТНА ЗАДНЯ ЧАСТИНА КАРТКИ ДЛЯ ДЕСКТОПУ ===== */
-@media (min-width: 769px) {
-
-  /* Задня сторона */
-  .card-face.back {
-    padding: 24px 28px;
-    overflow-y: visible !important; /* щоб не було скролу */
-  }
-
-  /* Назва карти */
-  .card-back-title {
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-
-  /* Архетип + слоган */
-  .card-back-archetype {
-    font-size: 15px;
-    line-height: 1.35;
-    margin-bottom: 12px;
-  }
-
-  .card-back-slogan {
-    font-size: 15px;
-    line-height: 1.35;
-    opacity: 0.85;
-    margin-bottom: 16px;
-  }
-
-  /* Основний текст */
-  .card-back-meaning {
-    font-size: 15px;
-    line-height: 1.45;
-    margin-bottom: 16px;
-  }
-
-  /* Блоки “Коли випадає / Запитай себе” */
-  .card-back-section-title {
-    font-size: 14px;
-    letter-spacing: 1px;
-    margin-top: 18px;
-    margin-bottom: 8px;
-  }
-
-  .card-back-list {
-    font-size: 15px;
-    line-height: 1.45;
-    gap: 6px;
-  }
-
-  .card-back-list li {
-    margin-bottom: 6px;
-  }
-}
-
