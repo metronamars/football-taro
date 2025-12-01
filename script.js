@@ -23,7 +23,7 @@ function setActiveMode(mode) {
 const ROLES_3 = [
   { key: "situation", label: "Ситуація", class: "role-situation" },
   { key: "challenge", label: "Виклик", class: "role-challenge" },
-  { key: "result", label: "Результат / тенденція", class: "role-result" }
+  { key: "result", label: "Результат", class: "role-result" }
 ];
 
 const ROLES_5 = [
@@ -388,3 +388,4 @@ styleSelect.addEventListener("change", () => {
 
 // За замовчуванням активний режим — 3 карти
 setActiveMode(3);
+
