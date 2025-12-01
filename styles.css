@@ -770,6 +770,24 @@ body {
     line-height: 1.4;
   }
 }
+@media (max-width: 768px) {
+  .card {
+    height: auto;
+    max-height: none;
+  }
+
+  .card-image-wrapper {
+    max-height: 60vh;      /* щоб картинка не була вища за 60% екрану */
+  }
+
+  .card-image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;   /* картинка вміщується цілком, без обрізання */
+    display: block;
+  }
+}
+
 
 
 
