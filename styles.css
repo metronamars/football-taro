@@ -787,7 +787,48 @@ body {
     display: block;
   }
 }
+/* ==== Фікс, щоб карту не різало на мобільному ==== */
+@media (max-width: 768px) {
+  /* Шапка перестає красти висоту екрану */
+  .top-bar {
+    position: static;
+  }
 
+  /* Одна карта в рядок */
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 
+  /* Сам "коробок" картки робимо вищим */
+  .card-inner {
+    min-height: 520px; /* було 380 — не вистачало */
+  }
 
+  /* Картинка зверху, текст під нею */
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
+  /* Картинка компактніша, але повністю влазить */
+  .card-image-wrapper {
+    width: 100%;
+    max-width: 260px;
+    height: 260px;
+    margin: 0 auto 8px;
+  }
+
+  .card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Щоб текст усередині не відрізало скролом */
+  .card-face {
+    overflow-y: visible;
+  }
+}
