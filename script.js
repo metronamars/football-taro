@@ -172,7 +172,7 @@ header.appendChild(roleBadge);
 // Іконка підказки для фліпу
 const flipHint = document.createElement("img");
 flipHint.className = "card-flip-hint";
-flipHint.src = "images/flip.webp"; // СЮДИ КЛАДЕШ МАЛЕНЬКУ PNG-ІКОНКУ
+flipHint.src = "images/roate.svg"; // СЮДИ КЛАДЕШ МАЛЕНЬКУ PNG-ІКОНКУ
 flipHint.alt = "Перевернути карту";
 cardFront.appendChild(flipHint);
 
@@ -388,5 +388,6 @@ styleSelect.addEventListener("change", () => {
 
 // За замовчуванням активний режим — 3 карти
 setActiveMode(3);
+
 
 
