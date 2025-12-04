@@ -762,3 +762,53 @@ body {
     top: 12px;
   }
 }
+/* === MOBILE FLIP FIX (max-width: 768px) === */
+@media (max-width: 768px) {
+
+  /* Карта росте за контентом, без жорсткої висоти */
+  .card-inner {
+    min-height: auto;
+    height: auto;
+    transform: none !important;      /* прибираємо 3D-анімацію */
+    transform-style: flat;
+  }
+
+  /* Обидві сторони більше не absolute,
+     тож висота картки рахується за контентом */
+  .card-face {
+    position: static;
+    inset: auto;
+    padding: 16px 16px 20px;
+    backface-visibility: visible;
+    overflow-y: visible;              /* нічого не ріже всередині */
+  }
+
+  /* Жодних поворотів на мобільному */
+  .card-front,
+  .card-back {
+    transform: none;
+  }
+
+  /* За замовчуванням показуємо front, back ховаємо */
+  .card-back {
+    display: none;
+  }
+
+  /* Коли є клас .flipped – міняємо сторони місцями */
+  .card.flipped .card-front {
+    display: none;
+  }
+
+  .card.flipped .card-back {
+    display: flex;
+  }
+
+  /* Трохи підлаштовуємо підказку-фліп */
+  .card-flip-hint {
+    width: 18px;
+    height: 18px;
+    right: 12px;
+    top: 12px;
+  }
+}
+
