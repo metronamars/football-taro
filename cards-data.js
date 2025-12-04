@@ -36,7 +36,7 @@ extra: {
   },
   {
     id: "major_1",
-    name: "ПЛЕЙМЕЙКЕР",
+    name: "МАГ",
     arcanaType: "major",
     suit: null,
     coreMeaning: "Творчий імпульс, талант, можливість створити момент з нічого.",
@@ -62,7 +62,7 @@ extra: {
   },
   {
     id: "major_2",
-    name: "ВЕРХОВНИЙ ВОРОТАР",
+    name: "ВЕРХОВНА ЖРИЦЯ",
     arcanaType: "major",
     suit: null,
     coreMeaning: "Інтуїція, приховане знання, читання гри.",
@@ -88,7 +88,7 @@ extra: {
   },
   {
     id: "major_3",
-    name: "НАСТАВНИК",
+    name: "ІМПЕРАТРИЦЯ",
     arcanaType: "major",
     suit: null,
     coreMeaning: "Ріст, творчість, стабільність, підтримка.",
@@ -114,7 +114,7 @@ extra: {
   },
   {
     id: "major_4",
-    name: "ПРЕЗИДЕНТ",
+    name: "ІМПЕРАТОР",
     arcanaType: "major",
     suit: null,
     coreMeaning: "Влада, структура, правила, контроль.",
@@ -217,7 +217,7 @@ extra: {
   },
   {
     id: "major_8",
-    name: "АРБІТР",
+    name: "СИЛА",
     arcanaType: "major",
     suit: null,
     coreMeaning: "Справедливість, баланс, наслідки рішень.",
@@ -295,7 +295,7 @@ extra: {
   },
   {
     id: "major_11",
-    name: "КОРУПЦІЙНИЙ СКАНДАЛ",
+    name: "ДИЯВОЛ",
     arcanaType: "major",
     suit: null,
     coreMeaning: "Правда виходить назовні.",
@@ -321,7 +321,7 @@ extra: {
   },
   {
     id: "major_12",
-    name: "ОФСАЙД",
+    name: "ПОВІШЕНИЙ",
     arcanaType: "major",
     suit: null,
     coreMeaning: "Пауза, несправедливість, затримка прогресу.",
@@ -347,7 +347,7 @@ extra: {
   },
   {
     id: "major_13",
-    name: "ПЕРЕХІД",
+    name: "СМЕРТЬ",
     arcanaType: "major",
     suit: null,
     coreMeaning: "Завершення циклу, зміна форми, нове попереду.",
@@ -373,7 +373,7 @@ extra: {
   },
   {
     id: "major_14",
-    name: "БАЛАНС",
+    name: "АЛХІМІЯ",
     arcanaType: "major",
     suit: null,
     coreMeaning: "Гармонія, стриманість, ідеальна дозованість.",
@@ -425,7 +425,7 @@ extra: {
   },
   {
     id: "major_16",
-    name: "КРАХ СЕЗОНУ",
+    name: "ВЕЖА",
     arcanaType: "major",
     suit: null,
     coreMeaning: "Різка зміна, розвал конструкції, болісна правда.",
@@ -556,7 +556,7 @@ extra: {
   },
   {
     id: "major_21",
-    name: "ПАРАД ТРОФЕЇВ",
+    name: "СВІТ",
     arcanaType: "major",
     suit: null,
     coreMeaning: "Завершення циклу, перемога, повна картина.",
@@ -1995,6 +1995,7 @@ extra: {
 },
   }
 ];
+
 
 
 
