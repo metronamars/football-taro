@@ -288,72 +288,82 @@ body {
 
 /* ===== МОБІЛЬНА ВЕРСІЯ (max-width: 768px) ===== */
 
+/* ===== МОБІЛЬНА ВЕРСІЯ З РОБОЧИМ ФЛІПОМ ===== */
 @media (max-width: 768px) {
+
   body {
     font-size: 14px;
   }
 
   .app {
-    padding: 10px 12px 24px;
+    padding: 12px;
   }
 
   .top-bar {
     flex-direction: column;
     align-items: stretch;
     position: static;
-    gap: 10px;
-    padding: 16px;
   }
 
-  .top-bar h1,
-  .top-bar h2,
-  .top-bar h3 {
-    font-size: 18px;
-  }
-
+  /* Одна картка в рядок */
   .cards-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
 
-  /* FIX ОСНОВНОЇ ПРОБЛЕМИ */
+  /* ГОЛОВНЕ — картка має фіксовану мінімальну висоту */
   .card-inner {
-    min-height: 420px;
+    min-height: 480px;      /* регулятор */
+    height: auto;           
   }
 
+  /* Фліп залишаємо */
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Лицева та тильна сторони — залишаються absolute */
+  .card-face {
+    position: absolute;
+    inset: 0;
+    padding: 16px;
+    overflow-y: auto;        /* повертаємо скрол — тепер він безпечний */
+  }
+
+  /* Тіло картки */
   .card-body {
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
     gap: 12px;
   }
 
   .card-image-wrapper {
     width: 100%;
     max-width: 320px;
-    height: auto !important;
+    height: auto;
     margin: 0 auto 10px;
   }
 
   .card-image-wrapper img {
-    height: auto !important;
+    width: 100%;
+    height: auto;
     object-fit: contain;
   }
 
-  .card-face {
-    overflow-y: visible !important;
-  }
-
   .card-name {
-    font-size: 16px;
+    font-size: 18px;
   }
 
-  .card-meta {
-    flex-wrap: wrap;
-    gap: 6px;
+  .card-core-meaning,
+  .card-football-meaning {
+    font-size: 14px;
   }
 
+  /* менша іконка фліпу */
   .card-flip-hint {
     width: 18px;
     height: 18px;
+    top: 12px;
+    right: 12px;
   }
 }
