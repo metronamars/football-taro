@@ -36,7 +36,7 @@ extra: {
   },
   {
     id: "major_1",
-    name: "МАГ",
+    name: "ЧАРІВНИК",
     arcanaType: "major",
     suit: null,
     coreMeaning: "Творчий імпульс, талант, можливість створити момент з нічого.",
@@ -1992,6 +1992,7 @@ extra: {
 },
   }
 ];
+
 
 
 
