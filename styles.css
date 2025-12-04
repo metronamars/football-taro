@@ -115,7 +115,8 @@ body {
   margin-bottom: 10px;
 }
 
-/* Кнопки вибору розкладу */
+/* Buttons */
+
 .mode-btn {
   cursor: pointer;
   border-radius: var(--radius-pill);
@@ -125,17 +126,11 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition:
-    transform 0.08s ease,
-    box-shadow 0.08s ease,
-    background 0.12s ease,
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.12s ease,
     color 0.12s ease;
-
-  /* базовий (неактивний) стан */
   background: rgba(10, 14, 32, 0.9);
   color: var(--text-main);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: none;
 }
 
 .mode-btn:hover {
@@ -143,53 +138,29 @@ body {
   transform: translateY(-1px);
 }
 
-/* Активна кнопка розкладу */
 .mode-btn.active {
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   color: #130c24;
   box-shadow: 0 0 22px rgba(255, 204, 51, 0.4);
 }
+
 /* SPREAD SECTION */
-
-.spread-section {
-  margin-top: 26px;
-}
-
-.spread-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.spread-header h2 {
-  margin: 0;
-  font-size: 18px;
-}
 
 .cards-grid {
   display: grid;
-  /* трохи ширші картки */
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 20px;
 }
 
 /* CARD */
 
-/* CARD */
-
 .card {
-  /* тільки оболонка з перспективою */
   perspective: 1200px;
 }
 
-/* Внутрішня частина, яка крутиться */
 .card-inner {
   position: relative;
   width: 100%;
-
-  /* усе, що раніше було на .card */
   background: radial-gradient(circle at top, #131933 0, #060816 55%, #040612 100%);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -199,18 +170,13 @@ body {
   flex-direction: column;
   gap: 12px;
   min-height: 380px;
-
-  /* 3D-фліп */
   transform-style: preserve-3d;
   transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* стан перевернутої картки */
 .card.flipped .card-inner {
   transform: rotateY(180deg);
 }
-
-/* Дві сторони картки */
 
 .card-face {
   position: absolute;
@@ -220,76 +186,14 @@ body {
   flex-direction: column;
   gap: 12px;
   backface-visibility: hidden;
-}
-
-.card-front {
-  transform: rotateY(0deg);
+  overflow-y: auto;
 }
 
 .card-back {
   transform: rotateY(180deg);
 }
 
-/* Далі — все як у тебе було раніше, просто працює всередині card-face */
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.card-name {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.card-role {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 3px 9px;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.card-role.role-situation {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  color: var(--accent-strong);
-}
-
-.card-role.role-challenge {
-  border-color: #ff6b6b;
-  background: rgba(255, 107, 107, 0.12);
-  color: #ff9f9f;
-}
-
-.card-role.role-result {
-  border-color: #4cd964;
-  background: rgba(76, 217, 100, 0.12);
-  color: #a6ffb8;
-}
-
-/* CARD META */
-
-.card-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  font-size: 11px;
-  color: var(--text-soft);
-}
-
-.meta-pill {
-  padding: 2px 7px;
-  border-radius: var(--radius-pill);
-  background: rgba(5, 8, 18, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-/* CARD BODY */
+/* Body */
 
 .card-body {
   display: grid;
@@ -306,7 +210,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   max-width: 190px;
   height: 300px;
   margin-top: 4px;
@@ -316,14 +219,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  display: block;
-}
-
-.card-image-placeholder {
-  padding: 12px;
-  text-align: center;
-  font-size: 11px;
-  color: var(--text-soft);
 }
 
 .card-text-block {
@@ -332,46 +227,25 @@ body {
   gap: 7px;
 }
 
-.card-core-meaning {
-  color: #b7b7c9;
-  font-size: 14px;
-  line-height: 1.45;
-  margin-top: 12px;
+/* BACK TEXT BLOCKS */
+
+.card-back-archetype {
+  font-size: 12px;
+  color: var(--text-soft);
 }
 
-.card-football-meaning {
-  color: #f1f1f7;
-  font-size: 14px;
-  line-height: 1.45;
-  margin-top: 4px;
+.card-back-slogan {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--accent-strong);
+  margin-bottom: 6px;
 }
 
-/* Блок з позицією (ситуація/виклик/результат) з неоном */
-
-.card-position-text {
-  margin-top: 14px;
-  padding: 12px 16px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 204, 51, 0.7);
-  background: radial-gradient(
-    circle at top left,
-    rgba(255, 204, 51, 0.18),
-    rgba(5, 8, 20, 1)
-  );
-  box-shadow:
-    0 0 12px rgba(255, 204, 51, 0.45),
-    0 0 32px rgba(255, 204, 51, 0.25);
-  font-size: 14px;
-  line-height: 1.5;
-  color: #f9f9ff;
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-
-.card-position-text:hover {
-  box-shadow:
-    0 0 18px rgba(255, 204, 51, 0.7),
-    0 0 42px rgba(255, 204, 51, 0.35);
-  transform: translateY(-1px);
+.card-back-section-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-soft);
 }
 
 /* SUMMARY */
@@ -384,12 +258,6 @@ body {
   border: 1px solid var(--border-subtle);
 }
 
-.summary-section h3 {
-  margin: 0 0 10px;
-  font-size: 16px;
-}
-
-/* сам текст висновку */
 .summary-text {
   margin: 0;
   font-size: 15px;
@@ -397,325 +265,82 @@ body {
   color: var(--text-muted);
 }
 
-/* кожен логічний шматок — окремий блок */
 .summary-text span {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-/* заголовки/мітки всередині — трохи відділені */
-.summary-text b {
-  display: inline-block;
-  margin-right: 4px;
-}
+/* SCROLLBAR */
 
-/* DECK INFO */
-
-.deck-info {
-  margin-top: 26px;
-  font-size: 13px;
-  color: var(--text-soft);
-}
-
-.deck-info h3 {
-  margin: 0 0 6px;
-  font-size: 15px;
-  color: var(--text-main);
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 720px) {
-  .top-bar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .card-body {
-    grid-template-columns: 1fr;
-  }
-
-  .card-image-wrapper {
-    max-width: 220px;
-    height: 320px;
-    margin: 0 auto;
-  }
-}
-
-.card {
-  perspective: 1200px;
-}
-
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-
-  /* було щось типу transition: transform 0.4s ease; */
-  transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1); 
-  /* ця крива дає різкий старт і інерційне "підстрибування" в кінці */
-}
-
-.card.flipped .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-face {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-}
-
-.card-back {
-  transform: rotateY(180deg);
-}
-
-/* BACK-SIDE ДОДАТКОВІ ЕЛЕМЕНТИ */
-
-.card-archetype {
-  font-size: 12px;
-  color: var(--text-soft);
-  margin-bottom: 4px;
-}
-
-.card-slogan {
-  font-size: 13px;
-  font-style: italic;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.card-back-block {
-  margin-top: 10px;
-}
-
-.card-back-section-title {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-soft);
-  margin-bottom: 4px;
-}
-
-.card-back-section-text {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--text-muted);
-}
-
-/* Щоб бек-сайд міг скролитись, якщо тексту багато */
-.card-face {
-  position: absolute;
-  inset: 0;
-  padding: 16px 16px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  backface-visibility: hidden;
-  overflow-y: auto;
-}
-
-/* Блок з архетипом + слоганом */
-.card-back-meta {
-  margin-top: 2px;
-  margin-bottom: 4px;
-}
-
-.card-back-archetype {
-  font-size: 12px;
-  color: var(--text-soft);
-  margin-bottom: 2px;
-}
-
-.card-back-slogan {
-  font-size: 13px;
-  font-style: italic;
-  color: var(--accent-strong);
-  margin-bottom: 8px;
-}
-
-/* Основні значення, трохи розділені */
-.card-back-meaning {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 6px;
-}
-
-/* Секції "Коли випадає" / "Запитай себе" */
-.card-back-section {
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.card-back-section-label {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-soft);
-  margin-bottom: 4px;
-}
-
-.card-back-list {
-  margin: 0;
-  padding-left: 18px;
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-.card-back-list li + li {
-  margin-top: 3px;
-}
-
-/* === СТИЛЬНИЙ СКРОЛБАР ДЛЯ КАРТИ === */
-
-/* для всіх елементів */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255,255,255,0.25) transparent;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
 }
 
-/* Webkit (Chrome/Edge) */
 ::-webkit-scrollbar {
   width: 6px;
-  background: transparent;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.22);
+  background: rgba(255, 255, 255, 0.22);
   border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255,255,255,0.35);
-}
+/* ===== МОБІЛЬНА ВЕРСІЯ (max-width: 768px) ===== */
 
-/* === ІКОНКА ПІДКАЗКИ ПРО ФЛІП === */
-.card-flip-hint {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 22px;
-  height: 22px;
-  opacity: 0.45;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  pointer-events: none;
-  filter: drop-shadow(0 0 4px rgba(0,0,0,0.45));
-}
-
-.card:hover .card-flip-hint {
-  opacity: 0.8;
-  transform: scale(1.1);
-}
-
-.card-flip-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 18px;
-  line-height: 1;
-  color: rgba(255,255,255,0.45);
-  pointer-events: none;
-  user-select: none;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-}
-
-.card:hover .card-flip-icon {
-  opacity: 1;
-}
-.rotate-icon {
-  position: absolute;
-  top: 50%;
-  right: -18px;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  
-  mask-image: url("images/rotate.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-
-  background-color: gold; /* або gold, або будь-який */
-}
-/* ===== Мобільна адаптація ===== */
 @media (max-width: 768px) {
   body {
     font-size: 14px;
   }
 
   .app {
-    max-width: 100%;
-    padding: 12px 12px 24px;
+    padding: 10px 12px 24px;
   }
 
   .top-bar {
     flex-direction: column;
     align-items: stretch;
+    position: static;
     gap: 10px;
+    padding: 16px;
   }
 
   .top-bar h1,
   .top-bar h2,
   .top-bar h3 {
     font-size: 18px;
-    text-align: left;
   }
 
-  /* Кнопки режимів — на всю ширину */
-  .mode-switch {
-    width: 100%;
-    justify-content: space-between;
-    gap: 8px;
-  }
-
-  .mode-switch button {
-    flex: 1;
-    padding: 10px 12px;
-    font-size: 14px;
-  }
-
-  /* Сітка карт — одна колонка */
-  #spreadContainer {
-    display: grid;
+  .cards-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 18px;
   }
 
-  .card {
-    max-width: 100%;
+  /* FIX ОСНОВНОЇ ПРОБЛЕМИ */
+  .card-inner {
+    min-height: 420px;
   }
 
-  /* Картинка зверху, текст під нею */
   .card-body {
-    display: flex;
     flex-direction: column;
-    gap: 10px;
+    display: flex;
+    gap: 12px;
   }
 
   .card-image-wrapper {
     width: 100%;
     max-width: 320px;
-    margin: 0 auto;
+    height: auto !important;
+    margin: 0 auto 10px;
   }
 
   .card-image-wrapper img {
-    width: 100%;
-    height: auto;
+    height: auto !important;
     object-fit: contain;
   }
 
-  .card-text-block {
-    font-size: 14px;
-    line-height: 1.4;
+  .card-face {
+    overflow-y: visible !important;
   }
 
   .card-name {
@@ -727,87 +352,8 @@ body {
     gap: 6px;
   }
 
-  .meta-pill {
-    font-size: 11px;
-    padding: 3px 8px;
-  }
-
-  /* Підказка-іконка фліпу (щоб не з’їдала місце) */
   .card-flip-hint {
     width: 18px;
     height: 18px;
-    right: 12px;
-    top: 12px;
-  }
-
-  /* Менше 3D-стресу на мобілці */
-  .card:hover {
-    transform: none;
-  }
-}
-
-/* ===== УНІФІКОВАНА МОБІЛЬНА ВЕРСІЯ (max-width: 768px) ===== */
-@media (max-width: 768px) {
-
-  /* Layout */
-  .app {
-    padding: 10px 12px 24px;
-  }
-
-  .top-bar {
-    flex-direction: column;
-    align-items: stretch;
-    position: static;
-    gap: 6px;
-  }
-
-  /* Одна карта в рядок */
-  .cards-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  /* Картка автоматично росте по контенту */
-  .card {
-    max-width: 100%;
-  }
-
-  .card-inner {
-    min-height: auto;
-  }
-
-  /* Картинка зверху */
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  /* ГОЛОВНЕ: не обрізаємо і не стискаємо */
-  .card-image-wrapper {
-    width: 100%;
-    max-width: 340px;
-    height: auto !important;
-    margin: 0 auto 10px;
-  }
-
-  .card-image-wrapper img {
-    width: 100%;
-    height: auto !important;
-    object-fit: contain;
-    display: block;
-  }
-
-  /* Текст не засовується у свій маленький скрол */
-  .card-face {
-    overflow-y: visible !important;
-  }
-
-  /* Підказка фліпу */
-  .card-flip-hint {
-    width: 18px;
-    height: 18px;
-    right: 12px;
-    top: 12px;
   }
 }
